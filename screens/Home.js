@@ -38,18 +38,7 @@ export default class HomeScreen extends Component {
   };
 
   renderItem = ({ item, index }) => (
-    <ListItem
-      key={index}
-      title={`Planet : ${item.name}`}
-      subtitle={`Distance from earth : ${item.distance_from_earth}`}
-      titleStyle={styles.title}
-      containerStyle={styles.listContainer}
-      bottomDivider
-      chevron
-      onPress={() =>
-        this.props.navigation.navigate("Details", { planet_name: item.name })
-      }
-    />
+    
   );
 
   keyExtractor = (item, index) => index.toString();
@@ -72,11 +61,7 @@ export default class HomeScreen extends Component {
           <Text style={styles.headerText}>Planets World</Text>
         </View>
         <View style={styles.lowerContainer}>
-          <FlatList
-            keyExtractor={this.keyExtractor}
-            data={this.state.listData}
-            renderItem={this.renderItem}
-          />
+          
         </View>
       </View>
     );
